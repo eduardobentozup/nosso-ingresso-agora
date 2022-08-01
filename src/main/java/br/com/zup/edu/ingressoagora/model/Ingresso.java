@@ -22,6 +22,9 @@ public class Ingresso {
     @ManyToOne(optional = false)
     private Evento evento;
 
+    @ManyToOne
+    private Cliente cliente;
+
 
     public Ingresso(EstadoIngresso estado) {
         this.estado = estado;
@@ -34,7 +37,28 @@ public class Ingresso {
     public Ingresso() {
     }
 
+    public Ingresso(Evento evento, Cliente cliente) {
+        this.evento = evento;
+        this.cliente = cliente;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public EstadoIngresso getEstado() {
+        return estado;
+    }
+
+    public LocalDateTime getCompradoEm() {
+        return compradoEm;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 }

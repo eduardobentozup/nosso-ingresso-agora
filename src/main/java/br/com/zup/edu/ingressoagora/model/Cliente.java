@@ -34,6 +34,15 @@ public class Cliente {
         this.atualizadoEm = LocalDateTime.now();
     }
 
+    public Cliente(Long id, String nome, String email, LocalDate nascimento, LocalDateTime incluidoEm, LocalDateTime atualizadoEm) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.nascimento = nascimento;
+        this.incluidoEm = incluidoEm;
+        this.atualizadoEm = atualizadoEm;
+    }
+
     public Long getId() {
         return id;
     }
@@ -58,4 +67,16 @@ public class Cliente {
         return atualizadoEm;
     }
 
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", nascimento=" + nascimento +
+                ", incluidoEm=" + incluidoEm +
+                ", atualizadoEm=" + atualizadoEm +
+                '}';
+    }
 }
